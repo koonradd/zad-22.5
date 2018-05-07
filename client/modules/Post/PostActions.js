@@ -39,7 +39,7 @@ export function editPost(cuid, post) {
 
 export function editPostRequest(cuid, post) {
   return dispatch => {
-    return callApi(`posts/${cuid}`, "put", {
+    return callApi(`posts/${cuid}`, "PUT", {
       post: {
         name: post.name,
         title: post.title,
@@ -92,7 +92,7 @@ export const thumbUp = cuid => {
 
 export const thumbUpRequest = cuid => {
   return dispatch => {
-    return callApi(`posts/${cuid}/up`, "put").then(() =>
+    return callApi(`posts/${cuid}/up`, "PUT").then(() =>
       dispatch(thumbUp(cuid))
     );
   };
@@ -107,7 +107,7 @@ export const thumbDown = cuid => {
 
 export const thumbDownRequest = cuid => {
   return dispatch => {
-    return callApi(`posts/${cuid}/down`, "put").then(() =>
+    return callApi(`posts/${cuid}/down`, "PUT").then(() =>
       dispatch(thumbDown(cuid))
     );
   };
